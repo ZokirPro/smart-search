@@ -10,7 +10,7 @@ export default class Repository extends BaseRepository {
   async get(data) {
     try {
       const { pattern } = data
-      const pipeline = this.aggregateBuilderForSearch(pattern.split(' '), ['fullname', 'position', 'address.name'])
+      const pipeline = this.aggregateBuilderForSearch(pattern?.trim().split(' '), ['fullname', 'position', 'address.name'])
       const employees: EmployeeItem[] = await Employee.aggregate(pipeline)
       return employees
     } catch (e) {

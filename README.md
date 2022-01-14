@@ -15,5 +15,3 @@ Run seeders. Seeders setup default data in database
 #### `npm run start`
 
 Starts the application in development using `nodemon` and `ts-node` to do hot reloading.
-
-#### `npm run start`
