@@ -1,0 +1,35 @@
+{
+  "name": "smart-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.ts",
+    "seed:mongo": "ts-node  ./src/shared/database/seeders/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ZokirPro/smart-search.git"
+  },
+  "author": "ZokirPro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZokirPro/smart-search/issues"
+  },
+  "homepage": "https://github.com/ZokirPro/smart-search#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/uuid": "^8.3.4",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.4.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "@types/dotenv": "^8.2.0",
+    "body-parser": "^1.19.1",
+    "express": "^4.17.2",
+    "mongoose": "^5.13.14",
+    "uuid": "^8.3.2"
+  }
+}

@@ -1,0 +1,72 @@
+[
+  {
+    "_id": "AedEdd4aecE3058608843d99C",
+    "fullname": "Nazarov Zafar",
+    "department": "IT",
+    "position": "Software Engineer",
+    "addressId": "9B0CD662eDddFb4498CA9e6CC"
+  },
+  {
+    "_id": "0aBBD9AcBACad7bC453cAc5cE",
+    "fullname": "Nabiev Safar",
+    "department": "Marketing",
+    "position": "Manager",
+    "addressId": "45479395Cc7ca0B2a40A346AE"
+  },
+  {
+    "_id": "f1d71eE0b20C86157CFCE847e",
+    "fullname": "Afandiyev Nabi",
+    "department": "HR",
+    "position": "Recruiter",
+    "addressId": "1C333E5C931D600De047ff5E4"
+  },
+  {
+    "_id": "eef16EEa09b9a45EF8F8d29C4",
+    "fullname": "Dilmurodov Muzafar",
+    "department": "HR",
+    "position": "Recruiter",
+    "addressId": "7Ed4d641FBfeCDDB25D9bD795"
+  },
+  {
+    "_id": "6ebCfF88CDAFd2CE4c0F6AF4f",
+    "fullname": "Eshmatov Toshmat",
+    "department": "HR",
+    "position": "Manager",
+    "addressId": "45479395Cc7ca0B2a40A346AE"
+  },
+  {
+    "_id": "15DfC80dd1CA58166Dc38701B",
+    "fullname": "Sarvarov Sardor",
+    "department": "IT",
+    "position": "Manager",
+    "addressId": "d1FD20A9C5eef4cad7aD5cBAf"
+  },
+  {
+    "_id": "c8CFb1C3Ca4442EE18F0Fc01f",
+    "fullname": "Nabiyev Asadullo",
+    "department": "Designer",
+    "position": "Deputy Manager",
+    "addressId": "9EBA14F0BAc6e1bEBa374D0c1"
+  },
+  {
+    "_id": "590f81DbEb9aD62AFc9AD4AF9",
+    "fullname": "Shoimov Imron",
+    "department": "Designer",
+    "position": "3DMax designer",
+    "addressId": "9B0CD662eDddFb4498CA9e6CC"
+  },
+  {
+    "_id": "1C1BEABDF248C5f722cedbEB0",
+    "fullname": "Eshmatov Ibrat",
+    "department": "IT",
+    "position": "Frontend Developer",
+    "addressId": "1C333E5C931D600De047ff5E4"
+  },
+  {
+    "_id": "4ea68eED5cdb9EEeFD87f140D",
+    "fullname": "Qodirov Ilhom",
+    "department": "IT",
+    "position": "Backend Developer",
+    "addressId": "d1FD20A9C5eef4cad7aD5cBAf"
+  }
+]
