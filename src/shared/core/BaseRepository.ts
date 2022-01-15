@@ -1,9 +1,9 @@
 export default class BaseRepository {
-  protected aggregateBuilderForSearch(patterns: string[], columns: string[]) {
+  protected aggregateBuilderForSearch(patterns: string[]) {
 
     const $match = {
       $match: {
-        $or: this.matchQueryBuilderWithRegex(patterns, columns)
+        $and: this.matchQueryBuilderWithRegex(patterns)
       }
     }
 
@@ -22,25 +22,36 @@ export default class BaseRepository {
       }
     }
 
+    const $addFields = {
+      $addFields: {
+        columnForSmartSearch: { $concat: ["$fullname", " ", "$position", " ", "$address.name"] },
+      }
+    }
+
+    const $project = {
+      $project: {
+        columnForSmartSearch: 0
+      }
+    }
     const $pipeline = [
       $lookupAddress,
       $unwindAddress,
-      $match
+      $addFields,
+      $match,
+      $project
     ]
+    console.log(JSON.stringify($pipeline));
 
     return $pipeline
   }
 
-  protected matchQueryBuilderWithRegex(patterns: string[], columns: string[]) {
+  protected matchQueryBuilderWithRegex(patterns: string[]) {
     let queries: any = []
-    for (let columnName of columns) {
-      for (let pattern of patterns) {
-        const column = {};
-        column[columnName] = {
-          $regex: this.fullTextSearchRegex(pattern)
-        };
-        queries.push(column)
+    for (let pattern of patterns) {
+      const columnForSmartSearch = {
+        columnForSmartSearch: this.fullTextSearchRegex(pattern)
       }
+      queries.push(columnForSmartSearch)
     }
 
     return queries
