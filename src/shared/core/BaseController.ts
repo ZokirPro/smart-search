@@ -23,4 +23,12 @@ export abstract class BaseController {
       message: 'Server error'
     });
   }
+
+  public clientError(res: Response, message?: string): Response {
+    return BaseController.jsonResponse(
+      res,
+      400,
+      message ? message : 'Bad Request'
+    );
+  }
 }
