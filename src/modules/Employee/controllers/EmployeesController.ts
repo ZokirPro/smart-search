@@ -6,7 +6,7 @@ export default class Controller extends BaseController {
   async get(req, res) {
     try {
       const data = req.query
-      if (!(data.pattern&&data.pattern.trim())) {
+      if (!(data.pattern && data.pattern.trim())) {
         return this.clientError(res, 'Pattern is required in query params')
       }
       const employees = await this.repository.get(data)

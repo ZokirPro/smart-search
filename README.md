@@ -16,6 +16,6 @@ Run seeders. Seeders setup default data in database
 
 Starts the application in development using `nodemon` and `ts-node` to do hot reloading.
 
-### `localhost:3000/employees?pattern='na afa di'`
+### `localhost:3000/employees?pattern=na afa di`
 
 Enter this url in postman
