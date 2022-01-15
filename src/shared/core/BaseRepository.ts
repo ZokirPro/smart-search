@@ -28,17 +28,18 @@ export default class BaseRepository {
       }
     }
 
-    // const $project = {
-    //   $project: {
-    //     columnForSmartSearch: 0
-    //   }
-    // }
+    const $project = {
+      $project: {
+        columnForSmartSearch: 0
+      }
+    }
+    
     const $pipeline = [
       $lookupAddress,
       $unwindAddress,
       $addFields,
       $match,
-      // $project
+      $project
     ]
     console.log(JSON.stringify($pipeline));
 
