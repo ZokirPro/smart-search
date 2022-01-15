@@ -28,17 +28,17 @@ export default class BaseRepository {
       }
     }
 
-    const $project = {
-      $project: {
-        columnForSmartSearch: 0
-      }
-    }
+    // const $project = {
+    //   $project: {
+    //     columnForSmartSearch: 0
+    //   }
+    // }
     const $pipeline = [
       $lookupAddress,
       $unwindAddress,
       $addFields,
       $match,
-      $project
+      // $project
     ]
     console.log(JSON.stringify($pipeline));
 
@@ -49,7 +49,7 @@ export default class BaseRepository {
     let queries: any = []
     for (let pattern of patterns) {
       const columnForSmartSearch = {
-        columnForSmartSearch: this.fullTextSearchRegex(pattern)
+        columnForSmartSearch: this.fullTextSearchRegex(pattern) 
       }
       queries.push(columnForSmartSearch)
     }
