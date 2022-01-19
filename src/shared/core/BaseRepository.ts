@@ -22,39 +22,28 @@ export default class BaseRepository {
       }
     }
 
-    const $addFields = {
-      $addFields: {
-        columnForSmartSearch: { $concat: ["$fullname", " ", "$position", " ", "$address.name"] },
-      }
-    }
-
-    const $project = {
-      $project: {
-        columnForSmartSearch: 0
-      }
-    }
-    
     const $pipeline = [
       $lookupAddress,
       $unwindAddress,
-      $addFields,
       $match,
-      $project
     ]
-    console.log(JSON.stringify($pipeline));
-
     return $pipeline
   }
 
-  protected matchQueryBuilderWithRegex(patterns: string[]) {
+  protected matchQueryBuilderWithRegex(patterns: string[], columns = ['fullname', 'position', 'address.name']) {
     let queries: any = []
     for (let pattern of patterns) {
-      const columnForSmartSearch = {
-        columnForSmartSearch: this.fullTextSearchRegex(pattern) 
+      const $orQuery = columns.map((columnName: string) => {
+        const column = {};
+        column[columnName] = this.fullTextSearchRegex(pattern);
+        return column;
+      })
+      const sequence = {
+        $or: $orQuery
       }
-      queries.push(columnForSmartSearch)
-    }
 
+      queries = [...queries, sequence];
+    }
     return queries
   }
   protected fullTextSearchRegex(pattern: string): RegExp {
